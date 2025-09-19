@@ -156,6 +156,7 @@ body {
   font-size: 1rem;
   font-weight: bold;
   color: var(--cinza);
+  
 }
 
 /* SECTION PROGRAMACAO (CRONOGRAMA) */
@@ -165,10 +166,14 @@ body {
   text-align: center;        /* centraliza todos os textos */
   padding: 0rem 1rem 0rem 1rem;
   margin-bottom: 2rem;
+  
 }
 
 #programacao h2{
   padding: 1rem 1rem 1rem 1rem;
+  font-size: 1.7rem;
+  font-weight: bold;
+
 }
 
 
@@ -236,6 +241,8 @@ body {
   background: #EEF1F5; /* cor mais escura */
   text-align: center;         /* centraliza todos os textos */
   padding: 1vw 20vw 1vw 20vw;
+  font-size: 1.7rem;
+  font-weight: bold;
 }
 .link_palestrante{
   padding: 2rem 5rem 16rem 5rem;
@@ -299,12 +306,18 @@ body {
 #local {
   padding: 1.5rem 1rem 1rem 1rem;
   text-align: center;
+  
+}
+h2.titulo_h2{
+    font-size: 1.7rem;
+  font-weight: bold;
 }
 
 /* SECTION INSCRICOES */
 #inscricoes {
   padding: 1.5rem 1rem 1rem 1rem;
   text-align: center;
+  
 }
 
 /* LINKS SEM ESTILO */
