@@ -123,9 +123,9 @@ body {
   color: var(--branco);
   text-align: center;
   padding: 2.5rem 1rem 1.5rem 1rem;
-  margin: 6rem 1rem 1rem 1rem;
+  margin: 6rem 2.5rem 1rem 2.5rem;
   border-radius: 10px;
-  
+
 }
 
 .banner h2 {
