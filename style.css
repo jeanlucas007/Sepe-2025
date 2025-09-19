@@ -155,7 +155,7 @@ body {
 
 /* SECTION PROGRAMACAO (CRONOGRAMA) */
 #programacao {
-  max-width: 70%; 
+  max-width: 80%; 
   margin: auto;
   background: var(--cinza); /* agora a cor do cronograma é cinza claro dos palestrantes */
   text-align: center;        /* centraliza todos os textos */
