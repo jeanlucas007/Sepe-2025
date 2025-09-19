@@ -14,8 +14,6 @@ body {
   background: var(--cinza);
   color: var(--azul-escuro);
   line-height: 1.6;
-  margin: 0;
-  padding: 0;
   scroll-behavior: smooth;
 }
 
@@ -23,18 +21,16 @@ body {
 .navbar {
   position: fixed;
   top: 0;
-  width: calc(100% - 2rem);
+  width: 100%;
   background: var(--azul-escuro);
   color: var(--branco);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 1.5rem 2.5rem;
   z-index: 1000;
-  margin: 1rem 1rem 1rem 1rem;
-  border-radius: 10px;
-  opacity: 80%;
-  
+  font-size: 1.2rem;
+
 }
 
 .navbar .logo {
@@ -46,8 +42,6 @@ body {
   list-style: none;
   display: flex;
   gap: 1.5rem;
-  margin: 0;
-  padding: 0;
 }
 
 .navbar ul li a {
