@@ -298,6 +298,57 @@ body {
   margin-top: 0.5rem;
 }
 
+/* SECTION PATROCINADORES */
+
+#patrocinadores {
+  padding: 2vw 20vw 2vw 20vw;
+  text-align: center;
+  background-color: #fff; /* opcional, para destacar a seção */
+}
+
+h2.titulo_patri {
+  font-size: 1.7rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.patrocinio-logos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 20px;
+  align-items: center;
+  justify-items: center;
+}
+
+.patrocinio-logos img {
+  max-height: 20vw;
+  object-fit: contain;
+  filter: grayscale(100%); /* padrão desktop */
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Hover continua apenas para desktop */
+@media (min-width: 768px) {
+  .patrocinio-logos img:hover {
+    transform: scale(1.1);
+    filter: grayscale(0%);
+  }
+}
+
+/* Mobile: remove grayscale */
+@media (max-width: 767px) {
+  .patrocinio-logos img {
+    filter: none;
+  }
+}
+
+
+
+
+
+
+
 /* SECTION LOCAL */
 #local {
   padding: 1.5rem 1rem 1rem 1rem;
@@ -305,7 +356,7 @@ body {
   
 }
 h2.titulo_h2{
-    font-size: 1.7rem;
+  font-size: 1.7rem;
   font-weight: bold;
 }
 
