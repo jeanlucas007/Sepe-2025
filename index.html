@@ -108,65 +108,67 @@
         </div>
     </section>
 
-    <!-- PALESTRANTES -->
-    <section id="palestrantes">
-        <h2>🎤 Palestrantes</h2>
-        <div class="palestrantes-grid">
-            <div class="palestrante-card">
-                <a href="#" class="link_palestrante"></a>
-                <div class="foto-perfil">
-                    <img src="images/mauricio.jpg" alt="Maurício Canto" onerror="this.src='images/vazio.jpg'">
-                </div>
-                <h3>Maurício Canto</h3>
-                <p>Palestra: Zero Trust</p>
-                <p class="descricao">Especialista em segurança digital com vasta experiência em modelos Zero Trust.</p>
-            </div>
+ <!-- PALESTRANTES -->
+<section id="palestrantes">
+  <h2>🎤 Palestrantes</h2>
+  <div class="palestrantes-grid">
+    <!-- Palestrante 1 -->
+    <div class="palestrante-card" data-nome="Maurício Canto" data-palestra="Zero Trust"
+      data-descricao="Especialista em segurança digital com vasta experiência em modelos Zero Trust."
+      data-img="images/mauricio.jpg">
+      <img src="images/mauricio.jpg" alt="Maurício Canto" onerror="this.src='images/vazio.jpg'">
+      <h3>Maurício Canto</h3>
+      <p>Palestra: Zero Trust</p>
+    </div>
 
-            <!-- Palestrante 2 -->
-            <div class="palestrante-card">
-                <a href="#" class="link_palestrante"></a>
-                <div class="foto-perfil">
-                    <img src="images/leonisio.jpg" alt="Leonísio Silveira Júnior" onerror="this.src='images/vazio.jpg'">
-                </div>
-                <h3>Leonísio Silveira Júnior</h3>
-                <p>Palestra: Desafios da Cibersegurança</p>
-                <p class="descricao">Pesquisador em segurança da informação e consultor de grandes empresas.</p>
-            </div>
+    <!-- Palestrante 2 -->
+    <div class="palestrante-card" data-nome="Leonísio Silveira Júnior" data-palestra="Desafios da Cibersegurança"
+      data-descricao="Pesquisador em segurança da informação e consultor de grandes empresas."
+      data-img="images/leonisio.jpg">
+      <img src="images/leonisio.jpg" alt="Leonísio Silveira Júnior" onerror="this.src='images/vazio.jpg'">
+      <h3>Leonísio Silveira Júnior</h3>
+      <p>Palestra: Desafios da Cibersegurança</p>
+    </div>
 
-            <!-- Palestrante 3 -->
-            <div class="palestrante-card">
-                <a href="#" class="link_palestrante"></a>
-                <div class="foto-perfil">
-                    <img src="images/clenilton.jpg" alt="Clenilton Carioca" onerror="this.src='images/vazio.jpg'">
-                </div>
-                <h3>Clenilton Pereira</h3>
-                <p>Palestra: Legado & Impacto</p>
-                <p class="descricao">Empreendedor com trajetória de destaque em inovação e startups.</p>
-            </div>
+    <!-- Palestrante 3 -->
+    <div class="palestrante-card" data-nome="Clenilton Pereira" data-palestra="Legado & Impacto"
+      data-descricao="Empreendedor com trajetória de destaque em inovação e startups."
+      data-img="images/clenilton.jpg">
+      <img src="images/clenilton.jpg" alt="Clenilton Pereira" onerror="this.src='images/vazio.jpg'">
+      <h3>Clenilton Pereira</h3>
+      <p>Palestra: Legado & Impacto</p>
+    </div>
 
-            <!-- Palestrante 4 -->
-            <div class="palestrante-card">
-                <a href="#" class="link_palestrante"></a>
-                <div class="foto-perfil">
-                    <img src="images/fabio.jpg" alt="Fábio Micheich" onerror="this.src='images/vazio.jpg'">
-                </div>
-                <h3>Fábio Meincheim</h3>
-                <p>Palestra: Automação de Processos com IA</p>
-                <p class="descricao">Engenheiro de software focado em soluções de automação inteligente.</p>
-            </div>
+    <!-- Palestrante 4 -->
+    <div class="palestrante-card" data-nome="Fábio Meincheim" data-palestra="Automação de Processos com IA"
+      data-descricao="Engenheiro de software focado em soluções de automação inteligente."
+      data-img="images/fabio.jpg">
+      <img src="images/fabio.jpg" alt="Fábio Meincheim" onerror="this.src='images/vazio.jpg'">
+      <h3>Fábio Meincheim</h3>
+      <p>Palestra: Automação de Processos com IA</p>
+    </div>
 
-            <!-- Palestrante 5 -->
-            <div class="palestrante-card">
-                <a href="#" class="link_palestrante"></a>
-                <div class="foto-perfil">
-                    <img src="images/paulo.jpg" alt="Paulo Mendes" onerror="this.src='images/vazio.jpg'">
-                </div>
-                <h3>Paulo Mendes</h3>
-                <p>Workshop: Automação e Redes</p>
-                <p class="descricao">Professor e pesquisador especializado em redes e sistemas automatizados.</p>
-            </div>
-    </section>
+    <!-- Palestrante 5 -->
+    <div class="palestrante-card" data-nome="Paulo Mendes" data-palestra="Workshop: Automação e Redes"
+      data-descricao="Professor e pesquisador especializado em redes e sistemas automatizados."
+      data-img="images/paulo.jpg">
+      <img src="images/paulo.jpg" alt="Paulo Mendes" onerror="this.src='images/vazio.jpg'">
+      <h3>Paulo Mendes</h3>
+      <p>Workshop: Automação e Redes</p>
+    </div>
+  </div>
+</section>
 
+<!-- MODAL (único e reaproveitado para todos os palestrantes) -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <img id="modal-img" src="" alt="">
+    <h3 id="modal-nome"></h3>
+    <p id="modal-palestra"></p>
+    <p id="modal-descricao"></p>
+  </div>
+</div>
     <!-- PATROCINADORES -->
 
     <section id="patrocinadores">
@@ -177,7 +179,7 @@
             <img src="images/logo3.png" alt="Patrocinador 3">
             <img src="images/logo4.png" alt="Patrocinador 4">
             <img src="images/logo5.png" alt="Patrocinador 5">
-            
+
         </div>
     </section>
 
@@ -216,3 +218,29 @@
 </body>
 
 </html>
+
+<script>
+  // Modal dos palestrantes
+  const modal = document.getElementById("modal");
+  const modalImg = document.getElementById("modal-img");
+  const modalNome = document.getElementById("modal-nome");
+  const modalPalestra = document.getElementById("modal-palestra");
+  const modalDescricao = document.getElementById("modal-descricao");
+  const closeBtn = document.querySelector(".modal .close");
+
+  document.querySelectorAll(".palestrante-card").forEach(card => {
+    card.addEventListener("click", () => {
+      modal.style.display = "flex";
+      modalImg.src = card.dataset.img;
+      modalNome.textContent = card.dataset.nome;
+      modalPalestra.textContent = "Palestra: " + card.dataset.palestra;
+      modalDescricao.textContent = card.dataset.descricao;
+    });
+  });
+
+  // Fechar modal
+  closeBtn.addEventListener("click", () => modal.style.display = "none");
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) modal.style.display = "none";
+  });
+</script>
