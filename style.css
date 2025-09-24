@@ -215,7 +215,7 @@ body {
 /* CTA */
 .cta {
   text-align: center;
-  margin-top: 1.9rem;
+  margin: 1.9rem;
 }
 
 .cta a {
@@ -226,6 +226,7 @@ body {
   border-radius: 6px;
   font-weight: bold;
   transition: background 0.3s;
+
 }
 
 .cta a:hover {
@@ -298,7 +299,7 @@ body {
   margin-top: 0.5rem;
 }
 
-/*teste*/
+/*palestrantemodal*/
 /* MODAL */
 .modal {
   position: fixed;
@@ -474,6 +475,75 @@ h2.titulo_h2{
   border-radius: 12px; /* bordas arredondadas */
   border: 2px solid var(--azul-medio); /* opcional: borda colorida */
 }
+
+/*modal inscrição*/
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+ 
+}
+.modal-content {
+  background: #fff;
+  padding: 100px;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 400px;
+
+}
+.modal .close {
+  position: absolute;
+  top: 10px; right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  
+}
+/* Container dos botões no modal */
+.modal-botoes {
+  display: flex;
+  justify-content: center;
+  gap: 15px; /* espaço entre os botões */
+  margin-top: 20px;
+}
+
+/* Botões dentro do modal */
+.modal-botoes .btn-confirmar,
+.modal-botoes .btn-cancelar {
+  min-width: 120px;   /* largura mínima */
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+/* Botão verde */
+.btn-confirmar {
+  background: #2e7d32;
+  color: #fff;
+  border: none;
+}
+
+/* Botão vermelho */
+.btn-cancelar {
+  background: #e53935;
+  color: #fff;
+  border: none;
+}
+
+/* Efeito hover */
+.btn-confirmar:hover,
+.btn-cancelar:hover {
+  transform: scale(1.05);
+}
+
 
 
 /* FOOTER */
