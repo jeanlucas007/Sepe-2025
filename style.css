@@ -300,6 +300,25 @@ body {
   margin-top: 0.5rem;
 }
 
+.redes-card {
+    display: flex;
+    justify-content: center; /* centraliza os botões */
+    gap: 10px;               /* espaço entre os botões */
+    margin-top: 8px;
+}
+
+.redes-card img {
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.redes-card img:hover {
+    transform: scale(1.2);
+}
+
 /*palestrantemodal*/
 /* MODAL */
 .modal {
@@ -314,13 +333,37 @@ body {
 
 .modal-content {
   background: var(--branco);
-  padding: 30px;
+  padding: 2rem;
   border-radius: 12px;
-  text-align: center;
-  max-width: 400px;
-  width: 90%;
+  text-align: left; /* melhora leitura de texto grande */
   box-shadow: 0 6px 15px rgba(0,0,0,0.3);
   animation: fadeIn 0.3s ease;
+
+  width: 90% !important;       /* força largura no desktop */
+  max-width: 900px !important; /* limita para não ficar gigante */
+  min-width: 600px !important; /* garante que não fique estreito */
+
+  max-height: 80vh;
+  overflow-y: auto;
+  margin: auto;
+}
+
+.modal-content p {
+    text-align: justify !important;  /* força todos os filhos a justificar */
+  }
+
+@media screen and (max-width: 768px) {
+  .modal-content {
+    width: 100% !important;    
+    min-width: unset !important;
+    border-radius: 10 !important;
+    margin: 0vw 5vw 0vw 5vw;
+    padding: 1rem !important;
+  }
+
+  .modal-content p {
+    text-align: justify !important;  /* força todos os filhos a justificar */
+  }
 }
 
 .modal-content img {
@@ -357,18 +400,6 @@ body {
   to {opacity:1; transform: scale(1);}
 }
 
-
-.modal-content {
-  background: var(--branco);
-  padding: 30px;
-  border-radius: 12px;
-  text-align: center;
-  max-width: 400px;
-  width: 90%;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
-  animation: fadeIn 0.3s ease;
-  position: relative; /* <<< IMPORTANTE */
-}
 
 
 .modal .close {
@@ -412,6 +443,30 @@ h2.titulo_patri {
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
+#organizacao {
+  padding: 40px 0;
+  text-align: center;
+  background: #f5f7fa;
+}
+
+#organizacao h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+#organizacao .logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+#organizacao .logos img {
+  max-height: 7rem;
+  object-fit: contain;
+}
+
 /* Hover continua apenas para desktop */
 @media (min-width: 768px) {
   .patrocinio-logos img:hover {
@@ -426,11 +481,6 @@ h2.titulo_patri {
     filter: none;
   }
 }
-
-
-
-
-
 
 
 /* SECTION LOCAL */
