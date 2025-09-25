@@ -237,8 +237,8 @@ body {
 #palestrantes {
   background: #EEF1F5; /* cor mais escura */
   text-align: center;         /* centraliza todos os textos */
-  padding: 1vw 20vw 1vw 20vw;
-  font-size: 1.7rem;
+  padding: 1vw 15vw 1vw 15vw;
+  font-size: 1.1rem;
   font-weight: bold;
 }
 .link_palestrante{
@@ -255,14 +255,14 @@ body {
 .palestrantes-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.5rem;
+  gap: 0.8rem;
   
   
 }
 
 .palestrante-card {
   background: var(--branco);
-  padding: 1.5rem;
+  padding: 1rem;
   text-align: center;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
@@ -289,8 +289,9 @@ body {
 }
 
 .palestrante-card p {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   margin-bottom: 0.5rem;
+  font-weight: 550;
 }
 
 .palestrante-card .descricao {
