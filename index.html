@@ -48,7 +48,7 @@
         <h2>📅 Cronograma</h2>
         <div class="cronograma">
             <!-- CARD 1 -->
-            <div class="card">
+            <div class="card" data-data="06/10/2025 19:30">
                 <div class="card-header">
                     <div>
                         <h3>06/10 - 19h30 🔒</h3>
@@ -60,9 +60,9 @@
 
 
             <!-- CARD 2 -->
-            <div class="card">
+            <div class="card" data-data="06/10/2025 21:00">
                 <div class="card-header">
-                    <div>
+                    <div class="palestra-card" >
                         <h3>06/10 - 21h 🔎</h3>
                         <p><strong>Tema:</strong> A Lupa da Ti</p>
                         <p><strong>Palestrante:</strong> Marcelo Silvestrini</p>
@@ -71,7 +71,7 @@
             </div>
 
             <!-- CARD 3 -->
-            <div class="card">
+            <div class="card" data-data="07/10/2025 19:30" data-vesp="13:00">
                 <div class="card-header">
                     <div>
                         <h3>07/10 - Vespertino ♾️</h3>
@@ -82,7 +82,7 @@
             </div>
 
             <!-- CARD 4 -->
-            <div class="card">
+            <div class="card" data-data="07/10/2025 19:30">
                 <div class="card-header">
                     <div>
                         <h3>07/10 - 19h30 🛡️</h3>
@@ -93,7 +93,7 @@
             </div>
 
             <!-- CARD 5 -->
-            <div class="card">
+            <div class="card" data-data="07/10/2025 21:00">
                 <div class="card-header">
                     <div>
                         <h3>07/10 - 21h 🛡️</h3>
@@ -104,7 +104,7 @@
             </div>
 
             <!-- CARD 6 -->
-            <div class="card">
+            <div class="card" data-data="08/10/2025 19:30" data-vesp="13:00">
                 <div class="card-header">
                     <div>
                         <h3>08/10 - Vespertino ♾️</h3>
@@ -115,7 +115,7 @@
             </div>
 
             <!-- CARD 7 -->
-            <div class="card">
+            <div class="card" data-data="08/10/2025 19:30">
                 <div class="card-header">
                     <div>
                         <h3>08/10 - 19h30 💡</h3>
@@ -126,7 +126,7 @@
             </div>
 
             <!-- CARD 8 -->
-            <div class="card">
+            <div class="card" data-data="08/10/2025 21:00">
                 <div class="card-header">
                     <div>
                         <h3>08/10 - 21h 💰</h3>
@@ -137,7 +137,7 @@
             </div>
 
             <!-- CARD 9 -->
-            <div class="card">
+            <div class="card" data-data="09/10/2025 19:30">
                 <div class="card-header">
                     <div>
                         <h3>09/10 - 19h30 🤖</h3>
@@ -148,7 +148,7 @@
             </div>
 
             <!-- CARD 10 -->
-            <div class="card">
+            <div class="card" data-data="10/10/2025 19:30">
                 <div class="card-header">
                     <div>
                         <h3>10/10 - 19h30 🛠️</h3>
@@ -159,7 +159,7 @@
             </div>
 
             <!-- CARD 11 -->
-            <div class="card">
+            <div class="card" data-data="10/10/2025 21:00">
                 <div class="card-header">
                     <div>
                         <h3>10/10 - 21h 📖</h3>
@@ -405,8 +405,44 @@
         modalInscricao.addEventListener("click", (e) => {
             if (e.target === modalInscricao) modalInscricao.style.display = "none";
         });
+
     </script>
 
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const agora = new Date();
+
+    document.querySelectorAll(".card").forEach(card => {
+        const dataAttr = card.getAttribute("data-data"); 
+        const datavesp = card.getAttribute("data-vesp"); // opcional
+        if (!dataAttr) return;
+
+        // Converte string em objeto Date
+        const [data, hora] = dataAttr.split(" ");
+        const [dia, mes, ano] = data.split("/").map(Number);
+        const [h, m] = hora.split(":").map(Number);
+
+        const inicio = new Date(ano, mes - 1, dia, h, m);
+
+        // Define duração: se tiver data-vesp, 240 min; senão, 90 min
+        let duracao = datavesp ? 240 : 90;
+        const fim = new Date(inicio.getTime() + duracao * 60000);
+
+        // Remove classes antigas
+        card.classList.remove("palestra-futuro", "palestra-rolando", "palestra-passada");
+
+        // Define estado
+        if (agora < inicio) {
+            card.classList.add("palestra-futuro");   // Azul
+        } else if (agora >= inicio && agora <= fim) {
+            card.classList.add("palestra-rolando"); // Verde
+        } else {
+            card.classList.add("palestra-passada"); // Cinza
+        }
+    });
+});
+</script>
 </body>
 
 </html>
