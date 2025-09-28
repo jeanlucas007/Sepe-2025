@@ -3,7 +3,8 @@
   --azul-medio: #3f5972;
   --azul-claro: #6d8aa6;
   --cinza: #f5f7fa;
-  --cinza-escuro: #d1d5db; /* mais escuro para palestrantes */
+  --cinza-escuro: #d1d5db;
+  /* mais escuro para palestrantes */
   --branco: #ffffff;
   --destaque: #1c8adb;
 }
@@ -34,8 +35,8 @@ body {
 }
 
 .navbar .logo {
-  max-width: 60px; 
-  height: auto;     
+  max-width: 60px;
+  height: auto;
 }
 
 .navbar ul {
@@ -49,12 +50,12 @@ body {
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s;
-  
+
 }
 
 .navbar ul li a:hover {
   color: var(--verde-ifc);
-  
+
 }
 
 /* HAMBURGER */
@@ -63,7 +64,7 @@ body {
   flex-direction: column;
   cursor: pointer;
   gap: 5px;
-  
+
 }
 
 .hamburger span {
@@ -73,7 +74,7 @@ body {
   background: var(--branco);
   border-radius: 3px;
   transition: 0.3s;
-  
+
 }
 
 /* NAVBAR MOBILE */
@@ -88,7 +89,7 @@ body {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-in-out;
-    
+
   }
 
   .nav-links.active {
@@ -118,14 +119,17 @@ body {
 }
 
 /* BANNER */
+
 .banner {
   background: var(--azul-medio);
   color: var(--branco);
   text-align: center;
-  padding: 2.5rem 1rem 1.5rem 1rem;
-  margin: 6rem 2.5rem 1rem 2.5rem;
-  border-radius: 10px;
-
+  padding: 2rem 1rem 2rem 1rem;
+  margin: 4rem 0rem 1rem 0rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .banner h2 {
@@ -142,69 +146,171 @@ body {
 
 .banner img {
   align-items: center;
-  width: 160px;   
-  height: auto;   
+  width: 250px;
+  height: auto;
+  padding: 0 0 1rem 0;
 }
 
 .banner .data {
-  font-size: 1rem;
+  font-size: 1.3rem;
   font-weight: bold;
   color: var(--cinza);
-  
+
 }
+
+@media (min-width: 992px) {
+  .banner {
+    flex-direction: row;
+    /* coloca lado a lado */
+    justify-content: center;
+    /* centraliza tudo dentro da seção */
+    align-items: center;
+    /* alinha verticalmente */
+    text-align: left;
+    /* texto alinhado à esquerda */
+    gap: 2.5rem;
+    /* espaçamento entre logo e texto */
+    padding: 5rem 4rem;
+    /* mais respiro */
+    font-size: 5rem;
+  }
+
+  .banner img {
+    width: 380px;
+    /* ajusta tamanho da logo */
+    height: auto;
+    flex-shrink: 0;
+    /* evita que a logo distorça */
+  }
+
+  .banner h2,
+  .banner p,
+  .banner .data {
+    text-align: left;
+    /* força alinhamento à esquerda */
+    margin: 0.3rem 0;
+  }
+
+  .banner-texto h2 {
+    font-size: 2.7rem;
+    /* maior título */
+  }
+
+  .banner-texto p {
+    font-size: 1.2rem;
+    /* subtítulo */
+  }
+
+  .banner-texto .data {
+    font-size: 1.4rem;
+    /* data maior */
+    font-weight: bold;
+    /* opcional para dar destaque */
+  }
+}
+
+.banner-texto {
+  text-align: center;
+}
+
+@media (min-width: 992px) {
+  .banner-texto {
+    display: flex;
+    flex-direction: column;
+    /* força ficar um abaixo do outro */
+    align-items: flex-start;
+    /* alinha tudo à esquerda */
+    text-align: left;
+  }
+}
+
 
 /* SECTION PROGRAMACAO (CRONOGRAMA) */
 #programacao {
-  max-width: 80%; 
+  max-width: 100%;
   margin: auto;
-  background: var(--cinza); /* agora a cor do cronograma é cinza claro dos palestrantes */
-  text-align: center;        /* centraliza todos os textos */
-  padding: 0rem 1rem 0rem 1rem;
+  background: var(--cinza);
+  /* agora a cor do cronograma é cinza claro dos palestrantes */
+  /* centraliza todos os textos */
+  padding: 0rem 1.2rem 0rem 1.2rem;
   margin-bottom: 2rem;
 
-  
+
 }
 
-#programacao h2{
-  padding: 1rem 1rem 1rem 1rem;
+@media (min-width: 992px) {
+  #programacao {
+    max-width: 90%;
+  }
+
+  .cronograma {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* sempre 3 colunas */
+    gap: 1.3rem;
+    width: 100%;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 1.4rem;
+    text-align: justify;
+  }
+}
+
+#programacao h2 {
+  padding: 1rem 1rem 1.8rem 1rem;
   font-size: 1.7rem;
   font-weight: bold;
+  text-align: center;
 
 }
 
 
 /* CRONOGRAMA */
 .card {
-    border-left: 8px solid #007bff; /* padrão azul */
-    padding: 10px;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    transition: transform 0.2s ease;
-    background: var(--branco);
+  border-left: 8px solid #007bff;
+  /* padrão azul */
+  padding: 10px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  transition: transform 0.2s ease;
+  background: var(--branco);
+
+}
+
+.card p {
+  font-weight: 500;
+}
+
+.card h3 {
+  font-weight: bold;
+  font-size: 1.5rem;
 }
 
 /* estados */
 .palestra-futuro {
-    border-left-color: #007bff; /* Azul */
+  border-left-color: #007bff;
+  /* Azul */
 }
 
 .palestra-rolando {
-    border-left-color: #28a745; /* Verde */
+  border-left-color: #28a745;
+  /* Verde */
 }
 
 .palestra-passada {
-    border-left-color: #6c757d; /* Cinza */
-    opacity: 0.5;
-    pointer-events: none;
+  border-left-color: #6c757d;
+  /* Cinza */
+  opacity: 0.5;
+  pointer-events: none;
 }
+
 .cronograma {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.3rem;
   width: 100%;
   padding: 0;
   box-sizing: border-box;
-  
+  font-size: 1.4rem;
+  text-align: justify;
 }
 
 .card:hover {
@@ -225,6 +331,7 @@ body {
 .card p {
   text-align: left;
 }
+
 /* CTA */
 .cta {
   text-align: center;
@@ -248,29 +355,33 @@ body {
 
 /* SECTION PALESTRANTES */
 #palestrantes {
-  background: #EEF1F5; /* cor mais escura */
-  text-align: center;         /* centraliza todos os textos */
-  padding: 1vw 15vw 1vw 15vw;
-  font-size: 1.1rem;
+  background: #EEF1F5;
+  /* cor mais escura */
+  text-align: center;
+  /* centraliza todos os textos */
+  padding: 1vw 15vw 2vw 15vw;
+  font-size: 1.3rem;
   font-weight: bold;
 }
-.link_palestrante{
+
+.link_palestrante {
   padding: 2rem 5rem 16rem 5rem;
-  position: relative; /* tira do modo padrão "static" */
+  position: relative;
+  /* tira do modo padrão "static" */
   z-index: 10;
 }
 
-#palestrantes h2{
+#palestrantes h2 {
   padding: 0rem 1rem 1rem 1rem;
-  
+  font-size: 1.7rem;
 }
 
 .palestrantes-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 0.8rem;
-  
-  
+
+
 }
 
 .palestrante-card {
@@ -278,9 +389,9 @@ body {
   padding: 1rem;
   text-align: center;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease;
-  
+
 }
 
 .palestrante-card:hover {
@@ -314,22 +425,24 @@ body {
 }
 
 .redes-card {
-    display: flex;
-    justify-content: center; /* centraliza os botões */
-    gap: 10px;               /* espaço entre os botões */
-    margin-top: 8px;
+  display: flex;
+  justify-content: center;
+  /* centraliza os botões */
+  gap: 10px;
+  /* espaço entre os botões */
+  margin-top: 8px;
 }
 
 .redes-card img {
-    width: 25px;
-    height: 25px;
-    object-fit: contain;
-    cursor: pointer;
-    transition: transform 0.2s ease;
+  width: 25px;
+  height: 25px;
+  object-fit: contain;
+  cursor: pointer;
+  transition: transform 0.2s ease;
 }
 
 .redes-card img:hover {
-    transform: scale(1.2);
+  transform: scale(1.2);
 }
 
 /*palestrantemodal*/
@@ -340,7 +453,7 @@ body {
   display: none;
   justify-content: center;
   align-items: center;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0, 0, 0, 0.6);
   z-index: 2000;
 }
 
@@ -348,13 +461,17 @@ body {
   background: var(--branco);
   padding: 2rem;
   border-radius: 12px;
-  text-align: left; /* melhora leitura de texto grande */
-  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+  text-align: left;
+  /* melhora leitura de texto grande */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
   animation: fadeIn 0.3s ease;
 
-  width: 90% !important;       /* força largura no desktop */
-  max-width: 900px !important; /* limita para não ficar gigante */
-  min-width: 600px !important; /* garante que não fique estreito */
+  width: 90% !important;
+  /* força largura no desktop */
+  max-width: 900px !important;
+  /* limita para não ficar gigante */
+  min-width: 600px !important;
+  /* garante que não fique estreito */
 
   max-height: 80vh;
   overflow-y: auto;
@@ -362,12 +479,13 @@ body {
 }
 
 .modal-content p {
-    text-align: justify !important;  /* força todos os filhos a justificar */
-  }
+  text-align: justify !important;
+  /* força todos os filhos a justificar */
+}
 
 @media screen and (max-width: 768px) {
   .modal-content {
-    width: 100% !important;    
+    width: 100% !important;
     min-width: unset !important;
     border-radius: 10 !important;
     margin: 0vw 5vw 0vw 5vw;
@@ -375,15 +493,16 @@ body {
   }
 
   .modal-content p {
-    text-align: justify !important;  /* força todos os filhos a justificar */
+    text-align: justify !important;
+    /* força todos os filhos a justificar */
   }
 }
 
 .modal-content img {
-  width:120px;
-  height:120px;
-  border-radius:50%;
-  object-fit:cover;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
   margin-bottom: 1rem;
   border: 3px solid var(--destaque);
 }
@@ -409,8 +528,15 @@ body {
 }
 
 @keyframes fadeIn {
-  from {opacity:0; transform: scale(0.9);}
-  to {opacity:1; transform: scale(1);}
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 
@@ -423,15 +549,26 @@ body {
   font-weight: bold;
   color: var(--azul-escuro);
   cursor: pointer;
-  z-index: 10; /* garante que fica na frente */
+  z-index: 10;
+  /* garante que fica na frente */
 }
 
 /* SECTION PATROCINADORES */
 
 #patrocinadores {
-  padding: 2vw 20vw 2vw 20vw;
+  padding: 2vw 15vw 2vw 15vw;
   text-align: center;
-  background-color: #fff; /* opcional, para destacar a seção */
+  background-color: #fff;
+  /* opcional, para destacar a seção */
+}
+
+@media (max-width: 600px) {
+  #patrocinadores {
+    padding: 2vw 10vw 2vw 10vw;
+    text-align: center;
+    background-color: #fff;
+    /* opcional, para destacar a seção */
+  }
 }
 
 h2.titulo_patri {
@@ -443,17 +580,35 @@ h2.titulo_patri {
 
 .patrocinio-logos {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   align-items: center;
   justify-items: center;
+  gap: 2rem;
 }
 
 .patrocinio-logos img {
-  max-height: 20vw;
+  max-width: 200px;
+  max-height: 180px;
+  width: 100%;
+  height: auto;
   object-fit: contain;
-  filter: grayscale(100%); /* padrão desktop */
+  filter: grayscale(100%);
   transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+@media (max-width: 600px) {
+  .patrocinio-logos {
+    grid-template-columns: repeat(3, 1fr);
+    /* agora são 3 colunas */
+    gap: 1rem;
+    /* pode reduzir o espaço para caber melhor */
+  }
+
+  .patrocinio-logos img {
+    max-width: 200px;
+    /* diminui um pouco */
+    max-height: 200px;
+  }
 }
 
 #organizacao {
@@ -476,7 +631,8 @@ h2.titulo_patri {
 }
 
 #organizacao .logos img {
-  max-height: 7rem;
+  max-height: 6rem;
+  max-width: 13rem;
   object-fit: contain;
 }
 
@@ -500,9 +656,10 @@ h2.titulo_patri {
 #local {
   padding: 1.5rem 1rem 1rem 1rem;
   text-align: center;
-  
+
 }
-h2.titulo_h2{
+
+h2.titulo_h2 {
   font-size: 1.7rem;
   font-weight: bold;
 }
@@ -511,7 +668,7 @@ h2.titulo_h2{
 #inscricoes {
   padding: 1.5rem 1rem 1rem 1rem;
   text-align: center;
-  
+
 }
 
 /* LINKS SEM ESTILO */
@@ -528,16 +685,20 @@ h2.titulo_h2{
 
 .mapa {
   display: flex;
-  justify-content: center; /* centraliza horizontalmente */
+  justify-content: center;
+  /* centraliza horizontalmente */
   margin-top: 1.5rem;
 }
 
 .mapa iframe {
   width: 100%;
-  max-width: 800px; /* controla largura máxima */
+  max-width: 800px;
+  /* controla largura máxima */
   height: 450px;
-  border-radius: 12px; /* bordas arredondadas */
-  border: 2px solid var(--azul-medio); /* opcional: borda colorida */
+  border-radius: 12px;
+  /* bordas arredondadas */
+  border: 2px solid var(--azul-medio);
+  /* opcional: borda colorida */
 }
 
 /*modal inscrição*/
@@ -545,13 +706,16 @@ h2.titulo_h2{
   display: none;
   position: fixed;
   z-index: 999;
-  left: 0; top: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.6);
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
   justify-content: center;
   align-items: center;
- 
+
 }
+
 .modal-content {
   background: #fff;
   padding: 100px;
@@ -560,25 +724,30 @@ h2.titulo_h2{
   max-width: 400px;
 
 }
+
 .modal .close {
   position: absolute;
-  top: 10px; right: 15px;
+  top: 10px;
+  right: 15px;
   font-size: 24px;
   cursor: pointer;
-  
+
 }
+
 /* Container dos botões no modal */
 .modal-botoes {
   display: flex;
   justify-content: center;
-  gap: 15px; /* espaço entre os botões */
+  gap: 15px;
+  /* espaço entre os botões */
   margin-top: 20px;
 }
 
 /* Botões dentro do modal */
 .modal-botoes .btn-confirmar,
 .modal-botoes .btn-cancelar {
-  min-width: 120px;   /* largura mínima */
+  min-width: 120px;
+  /* largura mínima */
   padding: 10px 20px;
   font-size: 1rem;
   font-weight: 600;

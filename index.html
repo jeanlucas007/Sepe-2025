@@ -37,10 +37,12 @@
 
     <!-- HEADER / BANNER -->
     <header class="banner">
-        <img src="images/LOGO-REDES.png" alt="">
-        <h2>Semana Acadêmica<br>CST em Redes de Computadores</h2>
-        <p>Conectando Saberes e Inovando o Futuro</p>
-        <a class="data" href="https://araquari.ifc.edu.br/">06 a 10 de Outubro - Campus Araquari</a>
+        <img src="images/SEPE.png" alt="">
+        <div class="banner-texto">
+            <h2>Semana Acadêmica<br>CST em Redes de Computadores</h2>
+            <p>Conectando Saberes e Inovando o Futuro</p>
+            <a class="data" href="https://araquari.ifc.edu.br/">06 a 10 de Outubro - Campus Araquari</a>
+        </div>
     </header>
 
     <!-- PROGRAMACAO -->
@@ -62,7 +64,7 @@
             <!-- CARD 2 -->
             <div class="card" data-data="06/10/2025 21:00">
                 <div class="card-header">
-                    <div class="palestra-card" >
+                    <div class="palestra-card">
                         <h3>06/10 - 21h - 22h 🔎</h3>
                         <p><strong>Tema:</strong> A Lupa da Ti</p>
                         <p><strong>Palestrante:</strong> Marcelo Silvestrini</p>
@@ -96,7 +98,7 @@
             <div class="card" data-data="07/10/2025 21:00">
                 <div class="card-header">
                     <div>
-                        <h3>07/10 - 21h - 22h  🛡️</h3>
+                        <h3>07/10 - 21h - 22h 🛡️</h3>
                         <p><strong>Tema:</strong> Lei Geral de Proteção de Dados</p>
                         <p><strong>Palestrante:</strong> Allyson Souza</p>
                     </div>
@@ -129,7 +131,7 @@
             <div class="card" data-data="08/10/2025 21:00">
                 <div class="card-header">
                     <div>
-                        <h3>08/10 - 21h - 22h  💰</h3>
+                        <h3>08/10 - 21h - 22h 💰</h3>
                         <p><strong>Tema:</strong> Empreendedorismo na Prática</p>
                         <p><strong>Palestrante:</strong> Vinicius de Oliveira</p>
                     </div>
@@ -141,7 +143,8 @@
                 <div class="card-header">
                     <div>
                         <h3>09/10 - 19h30 - 22h 🤖</h3>
-                        <p><strong>Workshop:</strong> Usando automação de processos para gerenciamento de redes: Uma introdução ao N8N e análise com IA</p>
+                        <p><strong>Workshop:</strong> Usando automação de processos para gerenciamento de redes: Uma
+                            introdução ao N8N e análise com IA</p>
                         <p><strong>Palestrante:</strong> Fábio Meincheim</p>
                     </div>
                 </div>
@@ -152,7 +155,8 @@
                 <div class="card-header">
                     <div>
                         <h3>10/10 - 19h30 - 20h30 🛠️</h3>
-                        <p><strong>Workshop:</strong> Usando automação de processos para gerenciamento de redes: Uma introdução ao N8N e análise com IA</p>
+                        <p><strong>Workshop:</strong> Usando automação de processos para gerenciamento de redes: Uma
+                            introdução ao N8N e análise com IA</p>
                         <p><strong>Palestrante:</strong> Fábio Meincheim</p>
                     </div>
                 </div>
@@ -162,7 +166,7 @@
             <div class="card" data-data="10/10/2025 21:00">
                 <div class="card-header">
                     <div>
-                        <h3>10/10 - 21h - 22h  📖</h3>
+                        <h3>10/10 - 21h - 22h 📖</h3>
                         <p><strong>Tema:</strong> Educação especial</p>
                         <p><strong>Palestrante:</strong> Erika Santomero</p>
                     </div>
@@ -196,9 +200,15 @@
         <h2>🎤 Palestrantes</h2>
         <div class="palestrantes-grid">
             <!-- Palestrante 1 -->
-            <div class="palestrante-card" data-nome="Maurício Canto" data-palestra="Zero Trust"
-                data-descricao="Especialista em segurança digital com vasta experiência em modelos Zero Trust."
-                data-img="images/mauricio.jpg">
+            <div class="palestrante-card" data-nome="Maurício Canto" data-palestra="Zero Trust" data-descricao="Profissional com mais 15 anos de experiência em TI e Segurança da Informação, atuando em projetos
+de implantação de softwares de segurança. Atualmente, Diretor de Produtos na iTFLEX
+Cibersegurança, liderando o desenvolvimento de soluções inovadoras para proteção de dados e
+infraestrutura crítica.
+Certificado como Auditor Líder e Implementador em diversas normas ISO (27001, 27701, 22301, 42001)
+e especialista em governança, continuidade de negócios e privacidade de dados.
+Atua também como Professor na StackX, formando novos profissionais em Linux, Cloud, DevOps e
+Segurança.
+" data-img="images/mauricio.jpg">
                 <img src="images/mauricio.jpg" alt="Maurício Canto" onerror="this.src='images/vazio.jpg'">
                 <h3>Maurício Canto</h3>
                 <p>Diretor de Produtos na iTFLEX</p>
@@ -228,8 +238,7 @@ Sua gestão foi marcada pela atração de grandes empresas, investimentos em inf
 
             <!-- Palestrante 4 -->
             <div class="palestrante-card" data-nome="Fábio Meincheim" data-palestra="Automação de Processos com IA"
-                data-descricao="Engenheiro de software focado em soluções de automação inteligente."
-                data-img="images/fabio.jpg">
+                data-descricao="..." data-img="images/fabio.jpg">
                 <img src="images/fabio.jpg" alt="Fábio Meincheim" onerror="this.src='images/vazio.jpg'">
                 <h3>Fábio Meincheim</h3>
                 <p>Coordenador de TI do IFSC</p>
@@ -257,13 +266,14 @@ Sua gestão foi marcada pela atração de grandes empresas, investimentos em inf
                 <p>Gestor Comercial na SETI Tecnologia</p>
             </div>
 
-            <!-- Palestrante 7 -->
+            <!-- Palestrante 7 
             <div class="palestrante-card" data-nome="Alaide Honorato" data-palestra=" Autismo e Violência doméstica"
                 data-descricao="..." data-img="images/alaide.jpg">
                 <img src="images/alaide.jpg" alt="Alaide Honorato" onerror="this.src='images/vazio.jpg'">
                 <h3>Alaide Honorato</h3>
                 <p>Fonoaudióloga na Prefeitura Municipal de Araquari</p>
             </div>
+            -->
 
             <!-- Palestrante 8 -->
             <div class="palestrante-card" data-nome="Allyson Souza" data-palestra="Lei Geral de Proteção de Dados"
@@ -329,6 +339,17 @@ Josiane do Rosário, autista e mãe atípica de três jovens com autismo. Atuo c
             <img src="images/logo2.png" alt="Patrocinador 2">
             <img src="images/logo3.png" alt="Patrocinador 3">
             <img src="images/logo4.png" alt="Patrocinador 4">
+            <img src="images/logo5.png" alt="Patrocinador 5">
+            <img src="images/logo6.png" alt="Patrocinador 6">
+            <img src="images/logo7.png" alt="Patrocinador 7">
+            <img src="images/logo8.png" alt="Patrocinador 8">
+            <img src="images/logo9.png" alt="Patrocinador 9">
+            <img src="images/logo10.png" alt="Patrocinador 10">
+            <img src="images/logo11.png" alt="Patrocinador 11">
+            <img src="images/logo12.png" alt="Patrocinador 12">
+            <img src="images/logo13.png" alt="Patrocinador 13">
+            <img src="images/logo14.png" alt="Patrocinador 14">
+
 
         </div>
     </section>
@@ -425,40 +446,41 @@ Josiane do Rosário, autista e mãe atípica de três jovens com autismo. Atuo c
     </script>
 
 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-    const agora = new Date();
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const agora = new Date();
 
-    document.querySelectorAll(".card").forEach(card => {
-        const dataAttr = card.getAttribute("data-data"); 
-        const datavesp = card.getAttribute("data-vesp"); // opcional
-        if (!dataAttr) return;
+            document.querySelectorAll(".card").forEach(card => {
+                const dataAttr = card.getAttribute("data-data");
+                const datavesp = card.getAttribute("data-vesp"); // opcional
+                if (!dataAttr) return;
 
-        // Converte string em objeto Date
-        const [data, hora] = dataAttr.split(" ");
-        const [dia, mes, ano] = data.split("/").map(Number);
-        const [h, m] = hora.split(":").map(Number);
+                // Converte string em objeto Date
+                const [data, hora] = dataAttr.split(" ");
+                const [dia, mes, ano] = data.split("/").map(Number);
+                const [h, m] = hora.split(":").map(Number);
 
-        const inicio = new Date(ano, mes - 1, dia, h, m);
+                const inicio = new Date(ano, mes - 1, dia, h, m);
 
-        // Define duração: se tiver data-vesp, 240 min; senão, 90 min
-        let duracao = datavesp ? 180 : 90;
-        const fim = new Date(inicio.getTime() + duracao * 60000);
+                // Define duração: se tiver data-vesp, 240 min; senão, 90 min
+                let duracao = datavesp ? 180 : 90;
+                const fim = new Date(inicio.getTime() + duracao * 60000);
 
-        // Remove classes antigas
-        card.classList.remove("palestra-futuro", "palestra-rolando", "palestra-passada");
+                // Remove classes antigas
+                card.classList.remove("palestra-futuro", "palestra-rolando", "palestra-passada");
 
-        // Define estado
-        if (agora < inicio) {
-            card.classList.add("palestra-futuro");   // Azul
-        } else if (agora >= inicio && agora <= fim) {
-            card.classList.add("palestra-rolando"); // Verde
-        } else {
-            card.classList.add("palestra-passada"); // Cinza
-        }
-    });
-});
-</script>
+                // Define estado
+                if (agora < inicio) {
+                    card.classList.add("palestra-futuro");   // Azul
+                } else if (agora >= inicio && agora <= fim) {
+                    card.classList.add("palestra-rolando"); // Verde
+                } else {
+                    card.classList.add("palestra-passada"); // Cinza
+                }
+            });
+        });
+    </script>
+
 </body>
 
 </html>
