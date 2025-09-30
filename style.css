@@ -7,7 +7,7 @@
   --cinza: #f5f7fa;
   --cinza-escuro: #d1d5db;
 
-  --azulao: #14588F;
+  --azulao: #052e50;
 
   /* mais escuro para palestrantes */
   --branco: #ffffff;
@@ -19,13 +19,15 @@ html {
   scroll-behavior: smooth;
 }
 
-body, html {
+body,
+html {
   margin: 0;
   padding: 0;
 }
 
 header.banner {
-  height: 100vh; /* vh = altura da viewport */
+  height: 100vh;
+  /* vh = altura da viewport */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -62,7 +64,7 @@ body {
 }
 
 .navbar.scrolled {
-  background: var(--azulao);
+  background: #031a2e;
   /* ganha cor ao rolar */
 }
 
@@ -161,7 +163,8 @@ body {
 .banner {
   position: relative;
   width: 100%;
-  height: 100vh; /* ocupa exatamente a tela */
+  height: 100vh;
+  /* ocupa exatamente a tela */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -171,7 +174,7 @@ body {
 
 
   background: url("images/foto-banner.png") no-repeat center center;
-  background-size: cover; 
+  background-size: cover;
   background-attachment: scroll;
 
 
@@ -192,11 +195,11 @@ body {
 .banner-texto {
   position: relative;
   z-index: 1;
-  max-width: 800px;
   margin: 0 1rem;
-  padding: 0 1rem;
+  padding: 0 1rem 0 0;
   text-align: left;
 }
+
 
 .banner-texto h2 {
   font-size: 2.8rem;
@@ -233,19 +236,8 @@ body {
   }
 
   .banner-texto {
-    /* NOVO AJUSTE: Move o texto para a DIREITA e centraliza verticalmente */
-    position: absolute;
-    right: 8%; /* Posiciona mais à direita (ajuste este valor se necessário) */
-    left: auto; /* Garante que 'left' não interfira */
-    top: 50%;
-    transform: translateY(-50%);
-    max-width: 600px; 
-    margin: 0;
-    text-align: right; /* Alinha texto dentro do bloco à direita */
-  }
-  
-  .banner-texto .data {
-      float: right; /* Garante que o bloco de data vá para a direita */
+    padding: 0 0 0 35rem;
+    text-align: right;
   }
 }
 
@@ -295,7 +287,8 @@ body {
 /* Seta animada no banner */
 .seta-baixo {
   position: absolute;
-  bottom: 30px; /* distancia do fundo */
+  bottom: 30px;
+  /* distancia do fundo */
   left: 50%;
   transform: translateX(-50%);
   font-size: 3rem;
@@ -307,12 +300,19 @@ body {
 
 /* Animação de pulo */
 @keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
     transform: translate(-50%, 0);
   }
+
   40% {
     transform: translate(-50%, -15px);
   }
+
   60% {
     transform: translate(-50%, -8px);
   }
@@ -325,7 +325,7 @@ body {
   /* limita a largura */
   margin: auto;
   background: var(--cinza);
-  padding: 1rem 0 5rem 0;
+  padding: 1rem 0 3rem 0;
 
 }
 
@@ -435,6 +435,46 @@ section.programacao div.texto {
     margin: 0.5rem 0 2.5rem 0;
     /* Espaçamento acima e abaixo */
   }
+
+  #programacao p {
+    /* Garante que o span .bio-completa possa ser escondido */
+    overflow: hidden;
+    /* Adiciona margem para que o botão não fique colado no texto */
+    padding-bottom: 0.5rem;
+  }
+
+  .btn-toggle {
+    display: inline-block;
+    /* Garante que 'Ver mais' fique na linha, se houver espaço */
+    color: var(--azulao);
+    /* Cor azul escuro definida no seu :root */
+    font-weight: 600;
+    /* Semi bold (se o Urbanist ou Lato tiver esse peso) */
+    cursor: pointer;
+    margin-left: 0.3em;
+    /* Espaço após os "..." */
+    transition: color 0.2s ease;
+  }
+
+  .btn-toggle:hover {
+    color: var(--destaque);
+    /* Muda para um azul mais claro no hover */
+    text-decoration: underline;
+    /* Adiciona um sublinhado sutil ao interagir */
+  }
+
+  /* Esconde o texto completo e garante que o ponto final não apareça se o texto for cortado */
+  .bio-curta {
+    display: inline;
+  }
+
+  /* Oculta o restante do texto por padrão no mobile, conforme a lógica do JS */
+  @media (max-width: 768px) {
+    .bio-completa {
+      display: none;
+      /* Inicia escondido, é ativado pelo JS */
+    }
+  }
 }
 
 .highlight {
@@ -503,7 +543,7 @@ section.programacao div.texto {
 /* SECTION PATROCINADORES */
 
 #patrocinadores {
-  padding: 2vw 15vw 2vw 15vw;
+  padding: 3vw 15vw 3vw 15vw;
   text-align: center;
   background-color: #fff;
   /* opcional, para destacar a seção */
@@ -613,14 +653,60 @@ h2 {
 
 /* SECTION LOCAL */
 #local {
-  padding: 1.5rem 1rem 1rem 1rem;
+  padding: 2rem 1rem 4rem 1rem;
+  /* padding lateral pequeno (funciona no mobile) */
   text-align: center;
+  position: relative;
+  color: var(--branco);
+  background: url("images/ifc-local.jpg") no-repeat center center;
+  background-size: cover;
+  background-attachment: scroll;
+  overflow: hidden;
+  /* garante que a overlay não vaze */
+}
 
+#local::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* cobre toda a área */
+  background: rgba(4, 64, 112, 0.9);
+  /* azul com transparência */
+  z-index: 1;
+}
+
+#local>* {
+  position: relative;
+  z-index: 2;
+  /* joga o conteúdo acima da camada azul */
+}
+
+/* Desktop: mais espaçamento lateral */
+@media (min-width: 1024px) {
+  #local {
+    padding: 4rem 15rem 4rem 15rem;
+    /* espaçamento grande só em telas largas */
+  }
 }
 
 h2.titulo_h2 {
   font-size: 1.7rem;
   font-weight: bold;
+}
+
+h2.titulo_h2 {
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+p.descricao-local {
+  padding: 1rem 12rem 1rem 12rem;
+}
+
+@media (max-width: 767px) {
+  p.descricao-local {
+    padding: 0 0 0 0;
+  }
 }
 
 /* SECTION INSCRICOES */
@@ -740,7 +826,7 @@ h2.titulo_h2 {
 
 /* FOOTER */
 footer {
-  background: var(--azul-escuro);
+  background: #031a2e;
   color: var(--branco);
   text-align: center;
   padding: 1rem;
