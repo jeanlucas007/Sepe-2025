@@ -6,7 +6,9 @@
   --azul-claro: #6d8aa6;
   --cinza: #f5f7fa;
   --cinza-escuro: #d1d5db;
+
   --azulao: #14588F;
+
   /* mais escuro para palestrantes */
   --branco: #ffffff;
   --destaque: #1c8adb;
@@ -60,12 +62,14 @@ body {
 }
 
 .navbar.scrolled {
-  background: #001d38;
+  background: var(--azulao);
   /* ganha cor ao rolar */
 }
 
 .navbar .logo {
+
   max-width: 8rem;
+
   height: auto;
 }
 
@@ -150,8 +154,10 @@ body {
 
 /* BANNER */
 
+
 /* BANNER ESTENDIDO */
 /* BANNER ESTENDIDO (com preview da seção seguinte) */
+
 .banner {
   position: relative;
   width: 100%;
@@ -163,9 +169,11 @@ body {
   background: #14588F;
   text-align: center;
 
+
   background: url("images/foto-banner.png") no-repeat center center;
   background-size: cover; 
   background-attachment: scroll;
+
 
 
 }
@@ -180,6 +188,7 @@ body {
   /* overlay opcional, se quiser, adicione background: rgba(0,0,0,0.4); */
 }
 
+
 .banner-texto {
   position: relative;
   z-index: 1;
@@ -190,15 +199,15 @@ body {
 }
 
 .banner-texto h2 {
-  font-size: 3rem;
+  font-size: 2.8rem;
   font-weight: bold;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   line-height: 1.2;
 }
 
 .banner-texto p {
   font-size: 1.4rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .banner-texto .data {
@@ -209,6 +218,7 @@ body {
   padding: 0.8rem 1.5rem;
   border-radius: 8px;
   display: inline-block;
+
 }
 
 /* Overlay para desktop */
@@ -223,8 +233,19 @@ body {
   }
 
   .banner-texto {
-    margin: 0 0 0 12rem;
-    /* desloca um pouco mais para a direita */
+    /* NOVO AJUSTE: Move o texto para a DIREITA e centraliza verticalmente */
+    position: absolute;
+    right: 8%; /* Posiciona mais à direita (ajuste este valor se necessário) */
+    left: auto; /* Garante que 'left' não interfira */
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 600px; 
+    margin: 0;
+    text-align: right; /* Alinha texto dentro do bloco à direita */
+  }
+  
+  .banner-texto .data {
+      float: right; /* Garante que o bloco de data vá para a direita */
   }
 }
 
@@ -247,6 +268,7 @@ body {
     display: none !important;
   }
 
+
   .banner-texto {
     /* AJUSTE AQUI: Removendo 'margin: auto;' e definindo o deslocamento */
     margin-top: 15rem;
@@ -256,37 +278,32 @@ body {
 
   .banner-texto h2 {
     font-size: 2rem;
-
   }
 
   .banner-texto p {
     font-size: 1.1rem;
   }
 
+
   .banner-texto .data {
     font-size: 1.2rem;
     padding: .8rem 2rem;
   }
+
 }
 
 /* Seta animada no banner */
 .seta-baixo {
   position: absolute;
-  bottom: 0.5rem; /* distancia do fundo */
+  bottom: 30px; /* distancia do fundo */
   left: 50%;
   transform: translateX(-50%);
-  font-size: 3.5rem;
+  font-size: 3rem;
   color: var(--branco);
   animation: bounce 1.5s infinite;
   cursor: pointer;
 }
 
-@media (max-width: 768px) {
-  .seta-baixo {
-    bottom: 0.8rem; /* ajusta a altura no mobile */
-    font-size: 0rem; /* opcional: um pouco menor */
-  }
-}
 
 /* Animação de pulo */
 @keyframes bounce {
@@ -308,7 +325,8 @@ body {
   /* limita a largura */
   margin: auto;
   background: var(--cinza);
-  padding: 1rem 0 1.2rem 0;
+  padding: 1rem 0 5rem 0;
+
 }
 
 .programacao h2 {
@@ -316,6 +334,8 @@ body {
   font-size: 1.8rem;
   font-weight: 900;
   text-align: center;
+
+
 }
 
 section.programacao {
@@ -328,7 +348,7 @@ section.programacao {
 section.programacao h3 {
   font-size: 1.7rem;
   font-weight: 900;
-  color: #001d38;
+  color: #111;
 }
 
 section.programacao h4 {
@@ -345,12 +365,12 @@ section.programacao h5 {
   margin-bottom: 0.5rem;
 }
 
+
 section.programacao p {
   font-size: 1rem;
   line-height: 1.6;
   font-weight: 500;
   margin-bottom: 1rem;
-  
   text-align: justify;
   color: #444;
 
@@ -358,11 +378,13 @@ section.programacao p {
 
 section.programacao img {
   max-width: 350px;
+
 }
 
 section.programacao div.principal {
   display: flex;
   align-items: center;
+
   justify-content: flex-start;
 }
 
@@ -371,6 +393,7 @@ section.programacao div.texto {
   text-align: left;
   padding: 0 5rem 0 5rem;
 }
+
 
 .separador {
   border: none;
@@ -382,6 +405,7 @@ section.programacao div.texto {
   margin: 1.7rem 0 2rem 0;
   /* Espaçamento acima e abaixo */
 }
+
 
 /* Mobile: imagem em cima do texto */
 @media (max-width: 768px) {
@@ -397,34 +421,19 @@ section.programacao div.texto {
   section.programacao div.texto {
     text-align: center;
     padding: 1rem 1rem 1rem 1rem;
+
   }
+
 
   section.programacao div.principal {
     gap: 0rem;
     /* espaço entre imagem e texto */
   }
 
+
   .separador {
     margin: 0.5rem 0 2.5rem 0;
     /* Espaçamento acima e abaixo */
-  }
-}
-
-@media (max-width: 768px) {
-  .bio-curta {
-    display: inline;
-  }
-
-  .bio-completa {
-    display: none;
-  }
-
-  .btn-toggle {
-    color: var(--destaque);
-    font-weight: bold;
-    cursor: pointer;
-    display: inline-block;
-    margin-left: 5px;
   }
 }
 
@@ -494,7 +503,7 @@ section.programacao div.texto {
 /* SECTION PATROCINADORES */
 
 #patrocinadores {
-  padding: 3vw 15vw 3vw 15vw;
+  padding: 2vw 15vw 2vw 15vw;
   text-align: center;
   background-color: #fff;
   /* opcional, para destacar a seção */
@@ -503,9 +512,10 @@ section.programacao div.texto {
 
 
 
-@media (max-width: 700px) {
+
+@media (max-width: 600px) {
   #patrocinadores {
-    padding: 3rem 2rem 2rem 2rem;
+    padding: 2vw 10vw 2vw 10vw;
     text-align: center;
     background-color: #fff;
     /* opcional, para destacar a seção */
@@ -527,7 +537,12 @@ h2.titulo_patri {
   gap: 2rem;
 }
 
-
+h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
 
 
 .patrocinio-logos img {
@@ -556,14 +571,13 @@ h2.titulo_patri {
 }
 
 #organizacao {
-  padding: 1rem 0;
+  padding: 40px 0;
   text-align: center;
   background: #f5f7fa;
 }
 
 #organizacao h2 {
   font-size: 2rem;
-  font-weight: bold;
   margin-bottom: 20px;
 }
 
@@ -571,7 +585,7 @@ h2.titulo_patri {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 5rem;
+  gap: 40px;
   flex-wrap: wrap;
 }
 
@@ -587,72 +601,26 @@ h2.titulo_patri {
     transform: scale(1.1);
     filter: grayscale(0%);
   }
-
 }
 
 /* Mobile: remove grayscale */
 @media (max-width: 767px) {
   .patrocinio-logos img {
-    filter: grayscale(100%);
-  }
-
-  #organizacao .logos {
-  gap: 0.5rem;
+    filter: none;
   }
 }
 
 
 /* SECTION LOCAL */
-
 #local {
-  padding: 2rem 1rem 4rem 1rem; /* padding lateral pequeno (funciona no mobile) */
+  padding: 1.5rem 1rem 1rem 1rem;
   text-align: center;
-  position: relative;
-  color: var(--branco);
-  background: url("images/ifc-local.jpg") no-repeat center center;
-  background-size: cover;
-  background-attachment: scroll;
-  overflow: hidden; /* garante que a overlay não vaze */
-}
 
-#local::before {
-  content: "";
-  position: absolute;
-  inset: 0; /* cobre toda a área */
-  background: rgba(4, 64, 112, 0.9); /* azul com transparência */
-  z-index: 1;
-}
-
-#local > * {
-  position: relative;
-  z-index: 2; /* joga o conteúdo acima da camada azul */
-}
-
-/* Desktop: mais espaçamento lateral */
-@media (min-width: 1024px) {
-  #local {
-    padding: 1.2rem 15rem 3rem 15rem; /* espaçamento grande só em telas largas */
-  }
 }
 
 h2.titulo_h2 {
   font-size: 1.7rem;
   font-weight: bold;
-}
-
-h2.titulo_h2 {
-  font-size: 1.7rem;
-  font-weight: bold;
-}
-
-p.descricao-local{
-  padding: 1rem 12rem 1rem 12rem;
-}
-
-@media (max-width: 767px) {
-  p.descricao-local{
-  padding: 0 0 0 0;
-}
 }
 
 /* SECTION INSCRICOES */
@@ -691,8 +659,6 @@ p.descricao-local{
   border: 2px solid var(--azul-medio);
   /* opcional: borda colorida */
 }
-
-
 
 /*modal inscrição*/
 .modal {
@@ -774,7 +740,7 @@ p.descricao-local{
 
 /* FOOTER */
 footer {
-  background: #001d38;
+  background: var(--azul-escuro);
   color: var(--branco);
   text-align: center;
   padding: 1rem;
