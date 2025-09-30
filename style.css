@@ -1,16 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
 :root {
   --azul-escuro: #2a3b4d;
   --azul-medio: #3f5972;
   --azul-claro: #6d8aa6;
   --cinza: #f5f7fa;
-  --cinza-escuro: #d1d5db; /* mais escuro para palestrantes */
+  --cinza-escuro: #d1d5db;
+  --azulao: #14588F;
+  /* mais escuro para palestrantes */
   --branco: #ffffff;
   --destaque: #1c8adb;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* BODY */
 body {
-  font-family: "Urbanist", sans-serif;
+  font-family: "Lato", sans-serif;
   background: var(--cinza);
   color: var(--azul-escuro);
   line-height: 1.6;
@@ -22,20 +30,27 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  background: var(--azul-escuro);
+  background: transparent;
+  /* começa transparente */
   color: var(--branco);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 2.5rem;
+  padding: 0.8rem 2rem 0.8rem 2rem;
   z-index: 1000;
   font-size: 1.2rem;
+  transition: background 0.3s ease;
+  /* transição suave */
+}
 
+.navbar.scrolled {
+  background: var(--azulao);
+  /* ganha cor ao rolar */
 }
 
 .navbar .logo {
-  max-width: 60px; 
-  height: auto;     
+  max-width: 8rem;
+  height: auto;
 }
 
 .navbar ul {
@@ -49,12 +64,12 @@ body {
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s;
-  
+
 }
 
 .navbar ul li a:hover {
   color: var(--verde-ifc);
-  
+
 }
 
 /* HAMBURGER */
@@ -63,7 +78,7 @@ body {
   flex-direction: column;
   cursor: pointer;
   gap: 5px;
-  
+
 }
 
 .hamburger span {
@@ -73,7 +88,7 @@ body {
   background: var(--branco);
   border-radius: 3px;
   transition: 0.3s;
-  
+
 }
 
 /* NAVBAR MOBILE */
@@ -88,7 +103,7 @@ body {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-in-out;
-    
+
   }
 
   .nav-links.active {
@@ -118,299 +133,303 @@ body {
 }
 
 /* BANNER */
+
+/* BANNER ESTENDIDO */
+/* BANNER ESTENDIDO (com preview da seção seguinte) */
 .banner {
-  background: var(--azul-medio);
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  /* ocupa 100% da altura da tela */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: var(--branco);
   text-align: center;
-  padding: 2.5rem 1rem 1.5rem 1rem;
-  margin: 6rem 2.5rem 1rem 2.5rem;
-  border-radius: 10px;
-
+  background: url("images/foto-banner.png") no-repeat center center/cover;
+  margin: 0;
+  overflow: hidden;
+  /* evita scroll interno */
 }
 
-.banner h2 {
-  font-size: 2rem;
+.banner::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* overlay opcional, se quiser, adicione background: rgba(0,0,0,0.4); */
+}
+
+.banner-texto {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 1rem;
+  padding: 0 1rem;
+  text-align: left;
+}
+
+.banner-texto h2 {
+  font-size: 3rem;
   font-weight: bold;
   margin-bottom: 1rem;
   line-height: 1.2;
 }
 
-.banner p {
-  font-size: 1rem;
-  margin-bottom: 1rem;
+.banner-texto p {
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
 }
 
-.banner img {
-  align-items: center;
-  width: 160px;   
-  height: auto;   
-}
-
-.banner .data {
-  font-size: 1rem;
+.banner-texto .data {
+  font-size: 1.6rem;
   font-weight: bold;
-  color: var(--cinza);
-  
-}
-
-/* SECTION PROGRAMACAO (CRONOGRAMA) */
-#programacao {
-  max-width: 80%; 
-  margin: auto;
-  background: var(--cinza); /* agora a cor do cronograma é cinza claro dos palestrantes */
-  text-align: center;        /* centraliza todos os textos */
-  padding: 0rem 1rem 0rem 1rem;
-  margin-bottom: 2rem;
-
-  
-}
-
-#programacao h2{
-  padding: 1rem 1rem 1rem 1rem;
-  font-size: 1.7rem;
-  font-weight: bold;
-
-}
-
-
-/* CRONOGRAMA */
-.card {
-    border-left: 8px solid #007bff; /* padrão azul */
-    padding: 10px;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    transition: transform 0.2s ease;
-    background: var(--branco);
-}
-
-/* estados */
-.palestra-futuro {
-    border-left-color: #007bff; /* Azul */
-}
-
-.palestra-rolando {
-    border-left-color: #28a745; /* Verde */
-}
-
-.palestra-passada {
-    border-left-color: #6c757d; /* Cinza */
-    opacity: 0.5;
-    pointer-events: none;
-}
-.cronograma {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.3rem;
-  width: 100%;
-  padding: 0;
-  box-sizing: border-box;
-  
-}
-
-.card:hover {
-  transform: translateY(-5px);
-}
-
-.card h3 {
-  margin-bottom: 0.3rem;
-  color: var(--azul-escuro);
-  text-align: left;
-}
-
-.card p strong {
-  color: var(--destaque);
-  text-align: left;
-}
-
-.card p {
-  text-align: left;
-}
-/* CTA */
-.cta {
-  text-align: center;
-  margin: 1.9rem;
-}
-
-.cta a {
-  background: var(--destaque);
   color: var(--branco);
-  text-decoration: none;
-  padding: 0.8rem 1.1rem;
-  border-radius: 6px;
-  font-weight: bold;
-  transition: background 0.3s;
-
+  background: var(--destaque);
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  display: inline-block;
 }
 
-.cta a:hover {
-  background: var(--azul-medio);
-}
-
-/* SECTION PALESTRANTES */
-#palestrantes {
-  background: #EEF1F5; /* cor mais escura */
-  text-align: center;         /* centraliza todos os textos */
-  padding: 1vw 15vw 1vw 15vw;
-  font-size: 1.1rem;
-  font-weight: bold;
-}
-.link_palestrante{
-  padding: 2rem 5rem 16rem 5rem;
-  position: relative; /* tira do modo padrão "static" */
-  z-index: 10;
-}
-
-#palestrantes h2{
-  padding: 0rem 1rem 1rem 1rem;
-  
-}
-
-.palestrantes-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 0.8rem;
-  
-  
-}
-
-.palestrante-card {
-  background: var(--branco);
-  padding: 1rem;
-  text-align: center;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: transform 0.2s ease;
-  
-}
-
-.palestrante-card:hover {
-  transform: translateY(-5px);
-}
-
-.palestrante-card img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 1rem;
-  border: 3px solid var(--destaque);
-}
-
-.palestrante-card h3 {
-  margin-bottom: 0.3rem;
-  color: var(--azul-escuro);
-}
-
-.palestrante-card p {
-  font-size: 0.8rem;
-  margin-bottom: 0.5rem;
-  font-weight: 550;
-}
-
-.palestrante-card .descricao {
-  font-size: 0.85rem;
-  color: var(--azul-claro);
-  margin-top: 0.5rem;
-}
-
-.redes-card {
-    display: flex;
-    justify-content: center; /* centraliza os botões */
-    gap: 10px;               /* espaço entre os botões */
-    margin-top: 8px;
-}
-
-.redes-card img {
-    width: 25px;
-    height: 25px;
-    object-fit: contain;
-    cursor: pointer;
-    transition: transform 0.2s ease;
-}
-
-.redes-card img:hover {
-    transform: scale(1.2);
-}
-
-/*palestrantemodal*/
-/* MODAL */
-.modal {
-  position: fixed;
-  inset: 0;
-  display: none;
-  justify-content: center;
-  align-items: center;
-  background: rgba(0,0,0,0.6);
-  z-index: 2000;
-}
-
-.modal-content {
-  background: var(--branco);
-  padding: 2rem;
-  border-radius: 12px;
-  text-align: left; /* melhora leitura de texto grande */
-  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
-  animation: fadeIn 0.3s ease;
-
-  width: 90% !important;       /* força largura no desktop */
-  max-width: 900px !important; /* limita para não ficar gigante */
-  min-width: 600px !important; /* garante que não fique estreito */
-
-  max-height: 80vh;
-  overflow-y: auto;
-  margin: auto;
-}
-
-.modal-content p {
-    text-align: justify !important;  /* força todos os filhos a justificar */
+/* Overlay para desktop */
+@media (min-width: 769px) {
+  .banner::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    /* opcional: background: rgba(0,0,0,0.3); */
   }
 
-@media screen and (max-width: 768px) {
-  .modal-content {
-    width: 100% !important;    
-    min-width: unset !important;
-    border-radius: 10 !important;
-    margin: 0vw 5vw 0vw 5vw;
-    padding: 1rem !important;
-  }
-
-  .modal-content p {
-    text-align: justify !important;  /* força todos os filhos a justificar */
+  .banner-texto {
+    margin: 0 0 0 12rem;
+    /* desloca um pouco mais para a direita */
   }
 }
 
-.modal-content img {
-  width:120px;
-  height:120px;
-  border-radius:50%;
-  object-fit:cover;
-  margin-bottom: 1rem;
-  border: 3px solid var(--destaque);
+/* MOBILE */
+/* MOBILE */
+@media (max-width: 768px) {
+  .banner {
+    background-image: url("images/banner-mobile.png") !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: cover !important;
+    height: 100vh;
+    /* ocupa toda a altura do mobile */
+    padding: 0 1rem;
+    /* apenas respiro lateral */
+  }
+
+  .banner::after {
+    content: none !important;
+    display: none !important;
+  }
+
+  .banner-texto {
+    /* AJUSTE AQUI: Removendo 'margin: auto;' e definindo o deslocamento */
+    margin-top: 18rem;
+    /* Empurra o texto 5rem para baixo */
+    text-align: center;
+  }
+
+  .banner-texto h2 {
+    font-size: 2rem;
+  }
+
+  .banner-texto p {
+    font-size: 1.1rem;
+  }
+
+  .banner-texto .data {
+    font-size: 1rem;
+    padding: .7rem 1rem;
+  }
 }
 
-.modal-content h3 {
-  margin-bottom: 0.5rem;
-  color: var(--azul-escuro);
-}
-
-.modal-content p {
-  font-size: 0.9rem;
-  margin: 0.3rem 0;
-}
-
-.modal .close {
+/* Seta animada no banner */
+.seta-baixo {
   position: absolute;
-  top: 15px;
-  right: 20px;
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: var(--azul-escuro);
+  bottom: 30px; /* distancia do fundo */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 3rem;
+  color: var(--branco);
+  animation: bounce 1.5s infinite;
   cursor: pointer;
 }
 
+/* Animação de pulo */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translate(-50%, 0);
+  }
+  40% {
+    transform: translate(-50%, -15px);
+  }
+  60% {
+    transform: translate(-50%, -8px);
+  }
+}
+
+
+/* SECTION PROGRAMACAO (CRONOGRAMA) */
+#programacao {
+  max-width: 1200px;
+  /* limita a largura */
+  margin: auto;
+  background: var(--cinza);
+  padding: 1rem 0 5rem 0;
+}
+
+.programacao h2 {
+  padding: 1rem 1rem 0rem 1rem;
+  font-size: 1.8rem;
+  font-weight: 900;
+  text-align: center;
+}
+
+section.programacao {
+  background-color: #fefefe;
+  margin: 2rem 0;
+  padding: 1rem;
+  border-radius: 15px;
+}
+
+section.programacao h3 {
+  font-size: 1.7rem;
+  font-weight: 900;
+  color: #111;
+}
+
+section.programacao h4 {
+  font-size: 1.7rem;
+  font-weight: 900;
+  color: var(--azulao);
+  margin-bottom: 0.5rem;
+}
+
+section.programacao h5 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #111;
+  margin-bottom: 0.5rem;
+}
+
+section.programacao p {
+  font-size: 1rem;
+  line-height: 1.6;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  text-align: justify;
+  color: #444;
+
+}
+
+section.programacao img {
+  max-width: 350px;
+}
+
+section.programacao div.principal {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+section.programacao div.texto {
+  flex: 1;
+  text-align: left;
+  padding: 0 5rem 0 5rem;
+}
+
+.separador {
+  border: none;
+  /* Remove a borda padrão */
+  height: 1px;
+  /* Define a altura da linha */
+  background-color: #ccc;
+  /* Cor discreta */
+  margin: 1.7rem 0 2rem 0;
+  /* Espaçamento acima e abaixo */
+}
+
+/* Mobile: imagem em cima do texto */
+@media (max-width: 768px) {
+  section.programacao div.principal {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  section.programacao img {
+    max-width: 80%;
+  }
+
+  section.programacao div.texto {
+    text-align: center;
+    padding: 1rem 1rem 1rem 1rem;
+  }
+
+  section.programacao div.principal {
+    gap: 0rem;
+    /* espaço entre imagem e texto */
+  }
+
+  .separador {
+    margin: 0.5rem 0 2.5rem 0;
+    /* Espaçamento acima e abaixo */
+  }
+}
+
+.highlight {
+  position: relative;
+  display: inline-block;
+  z-index: 0;
+  font-weight: 900;
+}
+
+.highlight::before {
+  content: '';
+  position: absolute;
+  left: -2px;
+  /* ligeiro desalinhamento horizontal */
+  right: -2px;
+  top: 0.2em;
+  /* ligeiro desalinhamento vertical */
+  bottom: 0.15em;
+  background: rgba(28, 138, 219, 0.4);
+  /* azul translúcido */
+  border-radius: 4px;
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 2s ease-out;
+  transform: scaleX(var(--progress, 0));
+}
+
+/* Se quiser, ainda pode manter keyframes para efeito inicial */
+@keyframes marcador {
+  0% {
+    transform: scaleX(0);
+  }
+
+  100% {
+    transform: scaleX(1);
+  }
+}
+
 @keyframes fadeIn {
-  from {opacity:0; transform: scale(0.9);}
-  to {opacity:1; transform: scale(1);}
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 
@@ -423,15 +442,28 @@ body {
   font-weight: bold;
   color: var(--azul-escuro);
   cursor: pointer;
-  z-index: 10; /* garante que fica na frente */
+  z-index: 10;
+  /* garante que fica na frente */
 }
 
 /* SECTION PATROCINADORES */
 
 #patrocinadores {
-  padding: 2vw 20vw 2vw 20vw;
+  padding: 2vw 15vw 2vw 15vw;
   text-align: center;
-  background-color: #fff; /* opcional, para destacar a seção */
+  background-color: #fff;
+  /* opcional, para destacar a seção */
+}
+
+
+
+@media (max-width: 600px) {
+  #patrocinadores {
+    padding: 2vw 10vw 2vw 10vw;
+    text-align: center;
+    background-color: #fff;
+    /* opcional, para destacar a seção */
+  }
 }
 
 h2.titulo_patri {
@@ -443,17 +475,43 @@ h2.titulo_patri {
 
 .patrocinio-logos {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   align-items: center;
   justify-items: center;
+  gap: 2rem;
 }
 
+h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+
 .patrocinio-logos img {
-  max-height: 20vw;
+  max-width: 200px;
+  max-height: 180px;
+  width: 100%;
+  height: auto;
   object-fit: contain;
-  filter: grayscale(100%); /* padrão desktop */
+  filter: grayscale(100%);
   transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+@media (max-width: 600px) {
+  .patrocinio-logos {
+    grid-template-columns: repeat(3, 1fr);
+    /* agora são 3 colunas */
+    gap: 1rem;
+    /* pode reduzir o espaço para caber melhor */
+  }
+
+  .patrocinio-logos img {
+    max-width: 200px;
+    /* diminui um pouco */
+    max-height: 200px;
+  }
 }
 
 #organizacao {
@@ -476,7 +534,8 @@ h2.titulo_patri {
 }
 
 #organizacao .logos img {
-  max-height: 7rem;
+  max-height: 6rem;
+  max-width: 13rem;
   object-fit: contain;
 }
 
@@ -500,9 +559,10 @@ h2.titulo_patri {
 #local {
   padding: 1.5rem 1rem 1rem 1rem;
   text-align: center;
-  
+
 }
-h2.titulo_h2{
+
+h2.titulo_h2 {
   font-size: 1.7rem;
   font-weight: bold;
 }
@@ -511,7 +571,7 @@ h2.titulo_h2{
 #inscricoes {
   padding: 1.5rem 1rem 1rem 1rem;
   text-align: center;
-  
+
 }
 
 /* LINKS SEM ESTILO */
@@ -528,16 +588,20 @@ h2.titulo_h2{
 
 .mapa {
   display: flex;
-  justify-content: center; /* centraliza horizontalmente */
+  justify-content: center;
+  /* centraliza horizontalmente */
   margin-top: 1.5rem;
 }
 
 .mapa iframe {
   width: 100%;
-  max-width: 800px; /* controla largura máxima */
+  max-width: 800px;
+  /* controla largura máxima */
   height: 450px;
-  border-radius: 12px; /* bordas arredondadas */
-  border: 2px solid var(--azul-medio); /* opcional: borda colorida */
+  border-radius: 12px;
+  /* bordas arredondadas */
+  border: 2px solid var(--azul-medio);
+  /* opcional: borda colorida */
 }
 
 /*modal inscrição*/
@@ -545,13 +609,16 @@ h2.titulo_h2{
   display: none;
   position: fixed;
   z-index: 999;
-  left: 0; top: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.6);
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
   justify-content: center;
   align-items: center;
- 
+
 }
+
 .modal-content {
   background: #fff;
   padding: 100px;
@@ -560,25 +627,30 @@ h2.titulo_h2{
   max-width: 400px;
 
 }
+
 .modal .close {
   position: absolute;
-  top: 10px; right: 15px;
+  top: 10px;
+  right: 15px;
   font-size: 24px;
   cursor: pointer;
-  
+
 }
+
 /* Container dos botões no modal */
 .modal-botoes {
   display: flex;
   justify-content: center;
-  gap: 15px; /* espaço entre os botões */
+  gap: 15px;
+  /* espaço entre os botões */
   margin-top: 20px;
 }
 
 /* Botões dentro do modal */
 .modal-botoes .btn-confirmar,
 .modal-botoes .btn-cancelar {
-  min-width: 120px;   /* largura mínima */
+  min-width: 120px;
+  /* largura mínima */
   padding: 10px 20px;
   font-size: 1rem;
   font-weight: 600;
