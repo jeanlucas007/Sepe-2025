@@ -12,9 +12,25 @@
   --destaque: #1c8adb;
 }
 
+
 html {
   scroll-behavior: smooth;
 }
+
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+header.banner {
+  height: 100vh; /* vh = altura da viewport */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+
 
 /* BODY */
 body {
@@ -139,17 +155,19 @@ body {
 .banner {
   position: relative;
   width: 100%;
-  height: 100vh;
-  /* ocupa 100% da altura da tela */
+  height: 100vh; /* ocupa exatamente a tela */
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--branco);
+  background: #14588F;
   text-align: center;
-  background: url("images/foto-banner.png") no-repeat center center/cover;
-  margin: 0;
-  overflow: hidden;
-  /* evita scroll interno */
+
+  background: url("images/foto-banner.png") no-repeat center center;
+  background-size: cover; 
+  background-attachment: scroll;
+
+
 }
 
 .banner::after {
