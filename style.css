@@ -6,7 +6,9 @@
   --azul-claro: #6d8aa6;
   --cinza: #f5f7fa;
   --cinza-escuro: #d1d5db;
+
   --azulao: #14588F;
+
   /* mais escuro para palestrantes */
   --branco: #ffffff;
   --destaque: #1c8adb;
@@ -65,7 +67,9 @@ body {
 }
 
 .navbar .logo {
+
   max-width: 8rem;
+
   height: auto;
 }
 
@@ -150,8 +154,10 @@ body {
 
 /* BANNER */
 
+
 /* BANNER ESTENDIDO */
 /* BANNER ESTENDIDO (com preview da seção seguinte) */
+
 .banner {
   position: relative;
   width: 100%;
@@ -163,9 +169,11 @@ body {
   background: #14588F;
   text-align: center;
 
+
   background: url("images/foto-banner.png") no-repeat center center;
   background-size: cover; 
   background-attachment: scroll;
+
 
 
 }
@@ -179,6 +187,7 @@ body {
   height: 100%;
   /* overlay opcional, se quiser, adicione background: rgba(0,0,0,0.4); */
 }
+
 
 .banner-texto {
   position: relative;
@@ -209,6 +218,7 @@ body {
   padding: 0.8rem 1.5rem;
   border-radius: 8px;
   display: inline-block;
+
 }
 
 /* Overlay para desktop */
@@ -221,6 +231,7 @@ body {
     pointer-events: none;
     /* opcional: background: rgba(0,0,0,0.3); */
   }
+
 
   .banner-texto {
     margin: 0 0 0 12rem;
@@ -247,6 +258,7 @@ body {
     display: none !important;
   }
 
+
   .banner-texto {
     /* AJUSTE AQUI: Removendo 'margin: auto;' e definindo o deslocamento */
     margin-top: 15rem;
@@ -263,10 +275,12 @@ body {
     font-size: 1.1rem;
   }
 
+
   .banner-texto .data {
     font-size: 1.2rem;
     padding: .8rem 2rem;
   }
+
 }
 
 /* Seta animada no banner */
@@ -281,12 +295,15 @@ body {
   cursor: pointer;
 }
 
+<<<<<<< HEAD
 @media (max-width: 768px) {
   .seta-baixo {
     bottom: 0.8rem; /* ajusta a altura no mobile */
     font-size: 0rem; /* opcional: um pouco menor */
   }
 }
+=======
+>>>>>>> a2be9fbe6872625afb25ce4f1920dcb0c573651a
 
 /* Animação de pulo */
 @keyframes bounce {
@@ -308,7 +325,12 @@ body {
   /* limita a largura */
   margin: auto;
   background: var(--cinza);
+<<<<<<< HEAD
   padding: 1rem 0 1.2rem 0;
+=======
+  padding: 1rem 0 5rem 0;
+
+>>>>>>> a2be9fbe6872625afb25ce4f1920dcb0c573651a
 }
 
 .programacao h2 {
@@ -316,6 +338,8 @@ body {
   font-size: 1.8rem;
   font-weight: 900;
   text-align: center;
+
+
 }
 
 section.programacao {
@@ -345,6 +369,7 @@ section.programacao h5 {
   margin-bottom: 0.5rem;
 }
 
+
 section.programacao p {
   font-size: 1rem;
   line-height: 1.6;
@@ -358,11 +383,13 @@ section.programacao p {
 
 section.programacao img {
   max-width: 350px;
+
 }
 
 section.programacao div.principal {
   display: flex;
   align-items: center;
+
   justify-content: flex-start;
 }
 
@@ -371,6 +398,7 @@ section.programacao div.texto {
   text-align: left;
   padding: 0 5rem 0 5rem;
 }
+
 
 .separador {
   border: none;
@@ -382,6 +410,7 @@ section.programacao div.texto {
   margin: 1.7rem 0 2rem 0;
   /* Espaçamento acima e abaixo */
 }
+
 
 /* Mobile: imagem em cima do texto */
 @media (max-width: 768px) {
@@ -397,12 +426,15 @@ section.programacao div.texto {
   section.programacao div.texto {
     text-align: center;
     padding: 1rem 1rem 1rem 1rem;
+
   }
+
 
   section.programacao div.principal {
     gap: 0rem;
     /* espaço entre imagem e texto */
   }
+
 
   .separador {
     margin: 0.5rem 0 2.5rem 0;
@@ -503,7 +535,12 @@ section.programacao div.texto {
 
 
 
+<<<<<<< HEAD
 @media (max-width: 700px) {
+=======
+
+@media (max-width: 600px) {
+>>>>>>> a2be9fbe6872625afb25ce4f1920dcb0c573651a
   #patrocinadores {
     padding: 3rem 2rem 2rem 2rem;
     text-align: center;
