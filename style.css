@@ -570,7 +570,7 @@ section.programacao div.texto {
 
 /* SECTION PATROCINADORES */
 
-#patrocinadores {
+#apoiadores {
   padding: 3vw 15vw 3vw 15vw;
   text-align: center;
   background-color: #fff;
@@ -578,7 +578,7 @@ section.programacao div.texto {
 }
 
 @media (max-width: 600px) {
-  #patrocinadores {
+  #apoiadores {
     padding: 13vw 10vw 13vw 10vw;
     text-align: center;
     background-color: #fff;
