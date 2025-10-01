@@ -116,29 +116,50 @@ body {
 /* NAVBAR MOBILE */
 @media (max-width: 768px) {
   .nav-links {
-    position: absolute;
-    top: 60px;
-    right: 0;
-    background: var(--azul-escuro);
-    flex-direction: column;
+    position: fixed;
+    /* Fica fixo na tela inteira */
+    top: 0;
+    left: 0;
     width: 100%;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-in-out;
-
+    height: 100%;
+    /* Cobre toda a tela */
+    background: rgba(3, 26, 46, 0.95);
+    /* Fundo escuro semi-transparente */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Centraliza verticalmente */
+    align-items: center;
+    /* Centraliza horizontalmente */
+    gap: 2rem;
+    /* Espaço entre links */
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 999;
+    /* Garante que fique acima da logo */
   }
 
   .nav-links.active {
-    max-height: 500px;
+    transform: translateY(0);
+    /* Anima a entrada */
   }
 
   .nav-links li {
-    text-align: center;
-    margin: 1rem 0;
+    margin: 0;
+  }
+
+  .nav-links a {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
   }
 
   .hamburger {
     display: flex;
+    position: fixed;  
+    right: 1.5rem;     
+    z-index: 1100;     
   }
 
   .hamburger.active span:nth-child(1) {
@@ -359,8 +380,8 @@ section.programacao h4 {
 }
 
 section.programacao h5 {
-  font-size: 1.5rem;
-  font-weight: 500;
+  font-size: 1.7rem;
+  font-weight: 550;
   color: #111;
   margin-bottom: 0.5rem;
 }
@@ -409,6 +430,10 @@ section.programacao div.texto {
 
 /* Mobile: imagem em cima do texto */
 @media (max-width: 768px) {
+  #programacao {
+  padding: 1rem 0 0.5rem 0;
+  }
+
   section.programacao div.principal {
     flex-direction: column;
     text-align: center;
@@ -474,6 +499,9 @@ section.programacao div.texto {
       display: none;
       /* Inicia escondido, é ativado pelo JS */
     }
+  .pontos {
+   display: inline;
+  }
   }
 }
 
@@ -549,13 +577,9 @@ section.programacao div.texto {
   /* opcional, para destacar a seção */
 }
 
-
-
-
-
 @media (max-width: 600px) {
   #patrocinadores {
-    padding: 2vw 10vw 2vw 10vw;
+    padding: 13vw 10vw 13vw 10vw;
     text-align: center;
     background-color: #fff;
     /* opcional, para destacar a seção */
@@ -598,6 +622,7 @@ h2 {
 @media (max-width: 600px) {
   .patrocinio-logos {
     grid-template-columns: repeat(3, 1fr);
+    /* filter: grayscale(100%); */ 
     /* agora são 3 colunas */
     gap: 1rem;
     /* pode reduzir o espaço para caber melhor */
@@ -611,7 +636,7 @@ h2 {
 }
 
 #organizacao {
-  padding: 40px 0;
+  padding: 2rem 1rem 0rem 1rem;
   text-align: center;
   background: #f5f7fa;
 }
@@ -637,6 +662,9 @@ h2 {
 
 /* Hover continua apenas para desktop */
 @media (min-width: 768px) {
+  #organizacao{
+    padding: 2rem 0 2rem 0;
+  }
   .patrocinio-logos img:hover {
     transform: scale(1.1);
     filter: grayscale(0%);
